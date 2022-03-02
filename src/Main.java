@@ -15,15 +15,15 @@ public class Main {
         if(isReedLight == false)
 
         {
-            if (speedOfPlayer1 >= 1) {
+            if (speedOfPlayer1 > 0) {
                 outPlayers = outPlayers + 1;
                 Utils.printDelim1("Статус игрока");
             }
-            if (speedOfPlayer2 >= 1) {
+            if (speedOfPlayer2 > 0) {
                 outPlayers = outPlayers + 1;
                 Utils.printDelim2("Статус игрока");
             }
-            if (speedOfPlayer3 >= 1) {
+            if (speedOfPlayer3 > 0) {
                 outPlayers = outPlayers + 1;
                 Utils.printDelim3("Статус игрока");
             }
