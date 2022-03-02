@@ -1,36 +1,25 @@
-class Main {
+import java.util.Arrays;
+
+public class Main {
+
     public static void main(String[] args) {
-        boolean isGreenLight = false;
+        System.out.println("Start game!");
+        int[] speedOfPlayers = {3, 0, 0, 4, 1};
 
-        int speedOfPlayer1 = 5;
-        int speedOfPlayer2 = 0;
-        int speedOfPlayer3 = 2;
-        int outPlayers = 0;
+        int expected = 3;
+        int actual = Statistic.speedPlOut(speedOfPlayers);
+        System.out.println("1.Количество выбывающих " + "ОР: " + expected + "; ФР: " + actual);
 
-        if (isGreenLight == false) {
-            if (speedOfPlayer1 > 0) {
-                outPlayers = outPlayers + 1;
-            }
-            if (speedOfPlayer2 > 0) {
-                outPlayers = outPlayers + 1;
-            }
-            if (speedOfPlayer3 > 0) {
-                outPlayers = outPlayers + 1;
-            }
+        int[] expected2 = {3, 4, 1};
+        int[] actual2 = Statistic.massOutPlayers(speedOfPlayers);
+
+        System.out.println("2.Массив скоростей выбывших игроков " + "ОР: " + expected2 + ";" + " ФР: " + actual2 + ";");
 
 
-        }
-        System.out.println("Выбыло: " + outPlayers);
+        int[] expected3 = {0, 0};
+        int[] actual3 = Statistic.massStayPlayers(speedOfPlayers);
 
+        System.out.println("3.Массив скоростей оставшихся в игре игроков " + "ОР: " + expected3 + ";" + " ФР: " + actual3 + ";");
     }
-
-
-}
-
-
-// Допишите здесь логику так, что будет подсчитано и выведено
-// количество игроков, которые выбывают.
-// Если свет зелёный, то проходят все игроки (0 выбывают).
-// Если свет красный, то выбывает каждый, чья скорость не 0.
 
 
