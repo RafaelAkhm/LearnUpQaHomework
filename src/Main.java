@@ -7,15 +7,15 @@ class Main {
         int speedOfPlayer3 = 2;
         int outPlayers = 0;
 
-        if (isGreenLight = true)
+        if (isGreenLight == true)
             if (isGreenLight = false){
-            if (speedOfPlayer1 >= 1) {
+            if (speedOfPlayer1 > 0) {
                 outPlayers = outPlayers + 1;
             }
-            if (speedOfPlayer2 >= 1) {
+            if (speedOfPlayer2 > 0) {
                 outPlayers = outPlayers + 1;
             }
-            if (speedOfPlayer3 >= 1) {
+            if (speedOfPlayer3 > 0) {
                 outPlayers = outPlayers + 1;
             }
 
