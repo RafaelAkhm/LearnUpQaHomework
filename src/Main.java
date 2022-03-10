@@ -1,7 +1,7 @@
 import my.favorite.code.Utils;
 
 public class Main {
-    public static boolean isReedLight = false;
+    static boolean isReedLight = false;
 
     public static void main(String[] args){
 
@@ -43,8 +43,6 @@ public class Main {
 
 
 
-/////////
-////////
 
 
 
