@@ -2,41 +2,33 @@ import my.favorite.code.Utils;
 
 class Color {
 
-    static boolean isReedLight = true;
-    public static int speedsOfPlayers(int outPlayers) {
+    public static boolean speedOfPlayer;
+    static boolean isReedLight = false;
 
-        int speedOfPlayer1 = 1;
-        int speedOfPlayer2 = 5;
-        int speedOfPlayer3 = 2;
-        outPlayers = 0;
+    public static int speedsOfPlayers(int speedOfPlayer) {
+        speedOfPlayer = 5;
+
 
         if (isReedLight) {
-            if (speedOfPlayer1 > 0) {
-                outPlayers = outPlayers + 1;
+            if (speedOfPlayer > 0) {
+                speedOfPlayer = 1;
                 Utils.printDelim1("Статус игрока");
-            }
-            if (speedOfPlayer2 > 0) {
-                outPlayers = outPlayers + 1;
+            } else {
                 Utils.printDelim2("Статус игрока");
             }
-            if (speedOfPlayer3 > 0) {
-                outPlayers = outPlayers + 1;
-                Utils.printDelim3("Статус игрока");
-            }
         }
-        return outPlayers;
+        return speedOfPlayer;
     }
+
 }
 
 public class Main {
     public static void main(String[] args) {
-
         if (Color.isReedLight) {
             System.out.println("Выбыло: " + Color.speedsOfPlayers(1) );
         } else {
-            System.out.println("Все в Игре! ");
+            System.out.println("Зеленый свет! Передвигайся и оставайся в игре! ");
         }
-
     }
 }
 
