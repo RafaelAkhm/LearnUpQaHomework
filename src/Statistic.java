@@ -3,11 +3,9 @@ class Color {
     static boolean isReedLight = true;
 }
 
-
 public class Statistic {
 
     static int speedPlOut(int[] speedOfPlayers) {
-
 
 
         int speedPlOut = 0;
@@ -18,27 +16,41 @@ public class Statistic {
 
         }
         return speedPlOut;
-
-
     }
 
-    static int[] massOutPlayers(int[] speedOfPlayers) {
-        int[] massOutPlayers = { 3, 4, 1};
-        for (int i = 0; i < massOutPlayers.length; i++) {
-            if (Color.isReedLight && massOutPlayers[i] > 0){
-                massOutPlayers = massOutPlayers;
+    
+    
+    static int[] massOutPlayersLose(int[] speedOfPlayers) {
+        int[] cnt = 0;
+        for (int speed : speedOfPlayers) {
+            if (!isGreenLight && speed > 0){
+                cnt++;
             }
         }
-        return massOutPlayers;
-    }
-    static int[] massStayPlayers(int[] speedOfPlayers) {
-        int[] massStayPlayers = new int [2];
-        for (int i = 0; i < massStayPlayers.length; i++) {
-            if (Color.isReedLight && massStayPlayers[i] ==0){
-                massStayPlayers = massStayPlayers;
+        int[] arr = new int[cnt];
+        int i = 0;
+        for (int speed : speedOfPlayers) {
+            if (!isGreenLight && speed > 0){
+                i++;
             }
         }
-        return massStayPlayers;
-    }
+        return arr;
+        
+        
+    static int[] massOutPlayersWin(int[] speedOfPlayers) {
+        int[] cnt = 0;
+        for (int speed : speedOfPlayers) {
+            if (!isGreenLight && speed = 0){
+                cnt++;
+            }
+        }
+        int[] arr = new int[cnt];
+        int i = 0;
+        for (int speed : speedOfPlayers) {
+            if (!isGreenLight && speed = 0){
+                i++;
+            }
+        }
+        return arr;
 
 }
