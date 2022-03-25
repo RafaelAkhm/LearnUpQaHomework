@@ -18,13 +18,13 @@ class Color {
 public class Main {
    public static void main(String[] args) {
         Color.isGreenLight = true;
-        boolean f = Color.isLose();
+        boolean f = Color.isLose(10);
         if (f==true) 
             System.out.println("Игрок выбыл");
         else
             System.out.println("Игрок проходит");
        Color.isGreenLight = true;
-       System.out.println(Color.isLose());
+       System.out.println(Color.isLose(10));
     
     }
 }
