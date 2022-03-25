@@ -1,6 +1,6 @@
 class Color {
 
-    static boolean isReedLight = true;
+    static boolean isGreenLight = false;
 }
 
 public class Statistic {
@@ -9,7 +9,7 @@ public class Statistic {
 
 
         int speedPlOut = 0;
-        if (Color.isReedLight) {
+        if (Color.isGreenLight) {
             for (int e : speedOfPlayers) {
                 if (e > 0) speedPlOut++;
             }
