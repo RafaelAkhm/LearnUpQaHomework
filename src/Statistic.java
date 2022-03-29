@@ -1,6 +1,6 @@
 class Color {
 
-    static boolean isRedLight = true;
+    static boolean isGreenLight;
 }
 
 
@@ -10,7 +10,7 @@ public class Statistic {
 
 
         int speedPlOut = 0;
-        if (Color.isRedLight) {
+        if (!Color.isGreenLight) {
             for (int e : speedOfPlayers) {
                 if (e > 0) speedPlOut++;
             }
@@ -22,14 +22,14 @@ public class Statistic {
     static int[] massOutPlayersLose(int[] speedOfPlayers) {
         int cnt = 0;
         for (int speed : speedOfPlayers) {
-            if (Color.isRedLight && speed > 0) {
-               cnt++;
+            if (!Color.isGreenLight && speed > 0) {
+                cnt++;
             }
         }
         int[] arr = new int[cnt];
         int i = 0;
         for (int speed : speedOfPlayers) {
-            if (Color.isRedLight && speed > 0) {
+            if (!Color.isGreenLight && speed > 0) {
                 i++;
             }
         }
@@ -39,7 +39,7 @@ public class Statistic {
     static int[] massOutPlayersWin(int[] speedOfPlayers) {
         int cnt = 0;
         for (int speed : speedOfPlayers) {
-            if (Color.isRedLight && speed == 0) {
+            if (!Color.isGreenLight && speed == 0) {
                 continue;
             }
             cnt++;
@@ -47,7 +47,7 @@ public class Statistic {
         int[] arr = new int[cnt];
         int i = 0;
         for (int speed : speedOfPlayers) {
-            if (Color.isRedLight && speed == 0) {
+            if (!Color.isGreenLight && speed == 0) {
                 i++;
             }
         }
@@ -55,4 +55,3 @@ public class Statistic {
 
     }
 }
-
