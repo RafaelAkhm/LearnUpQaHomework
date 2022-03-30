@@ -39,7 +39,7 @@ public class Statistic {
     static int[] massOutPlayersWin(int[] speedOfPlayers) {
         int cnt = 0;
         for (int speed : speedOfPlayers) {
-            if (!Color.isGreenLight && speed == 0) {
+            if (Color.isGreenLight && speed == 0) {
                 continue;
             }
             cnt++;
@@ -47,7 +47,7 @@ public class Statistic {
         int[] arr = new int[cnt];
         int i = 0;
         for (int speed : speedOfPlayers) {
-            if (!Color.isGreenLight && speed == 0) {
+            if (Color.isGreenLight && speed == 0) {
                 i++;
             }
         }
