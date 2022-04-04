@@ -1,57 +1,47 @@
-class Color {
-
-    static boolean isGreenLight;
-}
-
-
 public class Statistic {
-
-    static int speedPlOut(int[] speedOfPlayers) {
-
-
-        int speedPlOut = 0;
-        if (!Color.isGreenLight) {
-            for (int e : speedOfPlayers) {
-                if (e > 0) speedPlOut++;
+    public static boolean isGreenLight = false;
+    public static int numberOfDropouts(int[] speedOfPlayer) {
+        int countOfPlayers = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i])) {
+                ++countOfPlayers;
             }
-
         }
-        return speedPlOut;
+        return countOfPlayers;
     }
-
-    static int[] massOutPlayersLose(int[] speedOfPlayers) {
-        int cnt = 0;
-        for (int speed : speedOfPlayers) {
-            if (!Color.isGreenLight && speed > 0) {
-                cnt++;
+    public static boolean isPlayerDroppedOut(int speedOfPlayer) {
+        if (isGreenLight == false) {
+            if (speedOfPlayer != 0) {
+                return true;
+            } else {
+                return false;
             }
+        } else {
+            return false;
         }
-        int[] arr = new int[cnt];
-        int i = 0;
-        for (int speed : speedOfPlayers) {
-            if (!Color.isGreenLight && speed > 0) {
-                i++;
-            }
-        }
-        return arr;
     }
-
-    static int[] massOutPlayersWin(int[] speedOfPlayers) {
-        int cnt = 0;
-        for (int speed : speedOfPlayers) {
-            if (Color.isGreenLight && speed == 0) {
-                continue;
-            }
-            cnt++;
-        }
-        int[] arr = new int[cnt];
-        int i = 0;
-        for (int speed : speedOfPlayers) {
-            if (Color.isGreenLight && speed == 0) {
-                i++;
+    public static int[] speedsOfDropped(int[] speedOfPlayer) {
+        int cnt = numberOfDropouts(speedOfPlayer);
+        int[] result = new int[cnt];
+        int resultCount = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i])) {
+                result[resultCount] = speedOfPlayer[i];
+                ++resultCount;
             }
         }
-        return arr;
-
+        return result;
+    }
+    public static int[] speedsOfNotDropped(int[] speedOfPlayer) {
+        int cnt = speedOfPlayer.length - numberOfDropouts(speedOfPlayer);
+        int[] result = new int[cnt];
+        int resultCount = 0;
+        for (int i = 0; i != speedOfPlayer.length; ++i) {
+            if (isPlayerDroppedOut(speedOfPlayer[i]) == false) {
+                result[resultCount] = speedOfPlayer[i];
+                ++resultCount;
+            }
+        }
+        return result;
     }
 }
