@@ -2,13 +2,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class StaticTest {
+
     @Test
 
     public void NumbersOutPlayers() {
-        int[] speedOfPlayers = {3, 0, 0, 4, 1};
+        int[] speedOfPlayers = {0, 3, 2 };
 
         int expected = 3;
-        int actual = Statistic.speedPlOut(speedOfPlayers);
+        int actual = Statistic.numberOfDropouts(speedOfPlayers);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -16,16 +17,16 @@ public class StaticTest {
     @Test
 
     public void MassOutPlayers() {
-        int[] speedOfPlayers = {3, 0, 0, 4, 1};
+        int[] speedOfPlayers = {0, 3, 2 };
 
-        int[] expected = {3, 4, 1};
-        int[] actual = Statistic.massOutPlayers(speedOfPlayers);}
+        int[] expected = {3, 2};
+        int[] actual = Statistic.speedsOfDropped(speedOfPlayers);}
     @Test
 
     public void MassStayPlayers() {
-        int[] speedOfPlayers = {3, 0, 0, 4, 1};
+        int[] speedOfPlayers = {0, 3, 2 };
 
-        int[] expected = {0, 0};
-        int[] actual = Statistic.massOutPlayers(speedOfPlayers);}
+        int[] expected = {0};
+        int[] actual = Statistic.speedsOfNotDropped(speedOfPlayers);}
 
-}
+    }
